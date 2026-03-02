@@ -60,11 +60,11 @@ def call(Map config) {
 
                         withCredentials([string(credentialsId: dbCredentialId, variable: 'DB_URL')]) {
 
-                            sh '''
+                            sh """
                                 echo "Deploying to ${params.ENV}"
                                 echo "DB_URL is injected securely"
                                 node app.js
-                            '''
+                            """
                         }
                     }
                 }
